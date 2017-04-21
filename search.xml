@@ -3,9 +3,16 @@
   
     
     <entry>
+      <title><![CDATA[关于PageRank的理解]]></title>
+      <url>%2F2017%2F04%2F21%2F%E5%85%B3%E4%BA%8EPageRank%E7%9A%84%E7%90%86%E8%A7%A3%2F</url>
+      <content type="text"><![CDATA[##google大法：PageRank的了解在网络检索课程上了解了PageRank这个东西，也是google为什么能在第二次搜索引擎竞争活下来的原因。PageRank由google创始人Larry Page发明和命名的。 主要目的是去measure the importance of website page。越多的链接指向的页面，则越重要。(这就好比社会上，某个领域的专家总是比门外汉对本专业有更大的权威性）google如此解释： 1PageRank works by counting the number and quality of links to a page to determine a rough estimate of how important the website is. The underlying assumption is that more important websites are likely to receive more links from other websites]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[近期目标]]></title>
       <url>%2F2017%2F04%2F21%2F%E8%BF%91%E6%9C%9F%E7%9B%AE%E6%A0%87%2F</url>
-      <content type="text"><![CDATA[#近期要完成的东西： 牛客网pat刷够20题准备报考pat 复习考研数学和专业课和英语（真是每天必备的），现在以刷题静心为目标。]]></content>
+      <content type="text"><![CDATA[#近期要完成的东西： 牛客网pat刷够20题准备报考pat 复习考研数学和专业课和英语（真是每天必备的），现在以刷题静心为目标。 近期有os课程设计，网络检索实验，数值计算实验。]]></content>
     </entry>
 
     

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+    
+    <entry>
+      <title><![CDATA[hexo优化]]></title>
+      <url>%2F2017%2F04%2F20%2Fhexo%E4%BC%98%E5%8C%96%2F</url>
+      <content type="text"><![CDATA[这几天一直在折腾自己的blog通过Hexo框架，选择排名第一的nexT。 应金洲学长的要求添加了评论功能(由于多说要关闭了不得不选其他的网站有的丑，有的必须翻墙，有的还需要备案，真是心累） 后来通过网上的教程又添加了查询功能，标签，网站图标等等。总体来说后期越来越得心应手，主要是作者已经把很多功能都集成好了。]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[第一篇博客]]></title>
+      <url>%2F2017%2F04%2F19%2Fhello-world%2F</url>
+      <content type="text"><![CDATA[今天终于用Hexo搭建好了博客，刚开始操作起来真是麻烦，不过后期熟练之后各种得心应手，感觉自己搭载博客还是挺牛的，哈哈。 Hexo的几种命令Create a new post（放在_post文件夹下）123$ hexo new "My New Post"//这个是新建page$hexo new page "tag" More info: Writing 跑本地服务器123$ hexo server//或者$hexo s --debug More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites12$ hexo deploy//不知道为什么，发布到github必须先用hexo g, 然后 hexo d More info: Deployment 搭建hexo+github所有命令12345$ npm install hexo -g #安装 $ npm update hexo -g #升级 $ npm install hexo --save $ hexo init$ npm install]]></content>
+    </entry>
+
+    
+  
+  
+</search>

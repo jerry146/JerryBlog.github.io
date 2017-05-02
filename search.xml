@@ -3,9 +3,30 @@
   
     
     <entry>
+      <title><![CDATA[Python学习第一章]]></title>
+      <url>%2F2017%2F05%2F01%2Fpython-study-first-day%2F</url>
+      <content type="text"><![CDATA[123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110# coding=utf-8import refrom urllib import urlopenfrom urllib2 import HTTPErrorfrom bs4 import BeautifulSoup# 周密的异常处理让代码复用# 获取网页titledef getTitle(url): try: # 检查URL是否正常工作 html = urlopen(url) except HTTPError as e: return None try: # 检查便签是否存在 bsObj = BeautifulSoup(html.read(), "html.parser") # 可有单个参数：content， 解析方式， 向网页提交内容：data title = bsObj.body.head # 了解HTML的标签格式 except AttributeError as e: return None return title# 训练使用 bs4 findAll 和 find# 通过属性查找标签# findAll()的参数设置# 当网站管理员对网页内容稍加更改，代码是否会失效# 把请求头设置成移动设备在线# 寻找隐藏在JavaScript里面的信息# findAll(tag, attributes, recursive, text, limit, keywords)# recursive 是 bool 值， 若为 true 则可以查找子标签的子标签， 否则只能查到一级标签， 默认true# text 是用内容去匹配 而不是标签属性# limit 范围限制参数 网页中前x项# keyword 选择具有指定属性的标签# find(tag, attributes, recursive, text, keywords)def useFind(url): try: html = urlopen(url) except HTTPError as e: return None try: bsObj = BeautifulSoup(html.read(), "html.parser") nameList = bsObj.findAll("span", &#123;"class": &#123;"green", "red"&#125;&#125;) # bsObj.findAll(text = "jerry") # 查找包含Jerry内容的标签数目 可利用len()获得 # bsObj.findAll(id= "text") 等同于bsObj.findAll("",&#123;"id": "text"&#125;) 由于class是Python保留字，可能会出错 # print bsObj.findAll(&#123;"h1", "h2", "h3", "h4", "h5", "h6"&#125;) # span标签， 以及span标签对应的属性, 还有属性值。属性:属性值 通过字典实现 except AttributeError as e: return None for name in nameList: print name.get_text() # get_text()去掉所有标签# 标签在文档中的位置来查找标签 导航树# 不是bs4函数总是处理当前标签的后代标签，子只有一个，后代有多个# bsObj.div.findAll("img") 会找出文档中第一个div标签，然后获得这个div后代里所有的行标签列表def findChild(url): try: html = urlopen(url) except HTTPError as e: return None try: bsObj = BeautifulSoup(html, "html.parser") print(bsObj.find("img",&#123;"src":"../img/gifts/img1.jpg"&#125;).parent.previous_sibling.get_text()) except AttributeError as e: return None for child in bsObj.find("table",&#123;"id": "giftList"&#125;).children: # 如果把.children 换成 .descendants 会产生所有后代 # 换成.tr.next_sibings（兄弟标签: 只会返回后面的兄弟标签, 所以选择标签行然后调用next_siblings）与previous_siblings相反 处理表格数据更简单 # 只使用标签容易丢失细节不稳定 ，尽量利用标签属性 # print child pass# 正则表达式 regular expression: regex 经典应用识别邮箱地址# 词组正则字符串# aa*至少出现一次1~n个a# (cc)*出现0~2n次cc# (d | )出现跟着空格的d或者只有空格# 邮箱格式： [A-Za-z0-9\._+]+@[A-Za-z]+\.(com|org|edu|net)# bs4 与 正则表达式 配合使用# find("img")明显不行 会有隐藏的图片def findImg(url): try: html = urlopen(url) except AttributeError as e: return None try: bsObj = BeautifulSoup(html) images = bsObj.findAll("image",&#123;"src":re.compile("\.\.\/img\/gifts/img.*\.jpg")&#125;) for image in images: print (image["src"])# 打印出图片的相对路径 except HTTPError as e: return None# myTag.attrs 返回标签的全部属性，Python字典对象# 获取图片资源位置 ： myImgTag.attrs["src"]# Lambda函数可作为findAll()的参数，# 要求是标签作为参数，返回结果是bool类型# 获得有两个属性的标签 ： soup.findAll(lambda: tag: len(tag.attrs)==2)# content = getTitle("http://www.jb51.net/article/65303.htm")# content = useFind("http://www.pythonscraping.com/pages/warandpeace.html")content = findChild("http://www.pythonscraping.com/pages/page3.html")if content is None: print "title not found"else: print content]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[deep learning]]></title>
+      <url>%2F2017%2F04%2F24%2Fdeep-learning%2F</url>
+      <content type="text"></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[python学习]]></title>
+      <url>%2F2017%2F04%2F23%2Fpython%E5%AD%A6%E4%B9%A0%2F</url>
+      <content type="text"><![CDATA[##python 的数据类型 numbers 123451. int:2. long3. float4. complex5. string list 1列表用[]表示，类似数组。但是它可含有多种数据类型的数据 tuple 1不能二次赋值，相当于只读列表。 dictionary 1理解键的含义]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[作息时间表]]></title>
       <url>%2F2017%2F04%2F23%2F%E4%BD%9C%E6%81%AF%E6%97%B6%E9%97%B4%E8%A1%A8%2F</url>
-      <content type="text"><![CDATA[#考研作息时间表[TOC] 7:00 起床7:30 吃早饭8:00-9:00 背英语单词9:00-11:00 复习数学11:00-11;40 看英文周刊11:40-13:00 午饭和午休,洗脸养好精神13:00-17:00 复习专业课17:00-17:30 晚饭17:30-19:00 刷牛客网pat19:00-21:00 刷数学题目]]></content>
+      <content type="text"><![CDATA[#考研作息时间表[TOC] 7:00 起床7:30 吃早饭8:00-9:00 背英语单词9:00-11:00 复习数学11:00-11;40 看英文周刊11:40-13:00 午饭和午休,洗脸养好精神13:00-17:00 复习专业课17:00-17:30 晚饭17:30-19:00 刷牛客网pat19:00-21:00 刷数学题目21:00-24:00 刷真题]]></content>
     </entry>
 
     
